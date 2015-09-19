@@ -7,7 +7,7 @@ vk = vk_api.VkApi(os.environ['VK_LOGIN'], os.environ['VK_PASSWORD'])
 vk.authorization()
 
 # Сканируем все возраста от 14 до 21
-for i in range(14, 21):
+for i in range(int(input()), int(input())):
     response = vk.method('users.search', {
         'sort': 0,
         'count': 250,
