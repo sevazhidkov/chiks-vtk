@@ -50,6 +50,7 @@ while response['items']:
                 'rating': 1000,
                 'checks': 0
             }
+            print(girl['id'], '- added.')
 
     response = vk.method('groups.getMembers', {
         'group_id': 'slyhivtk',
@@ -57,3 +58,7 @@ while response['items']:
         'fields': 'photo_200,sex',
         'offset': i + 1000
     })
+    print(i, '- offset')
+
+print('Adding to db')
+db.girls.inset_many(list(girls.values()))
