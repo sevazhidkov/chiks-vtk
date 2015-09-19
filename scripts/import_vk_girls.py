@@ -52,14 +52,14 @@ while response['items']:
             }
             print(girl['id'], '- added.')
 
+    i += 1
     response = vk.method('groups.getMembers', {
         'group_id': 'slyhivtk',
         'count': 1000,
         'fields': 'photo_200,sex',
-        'offset': i + 1000
+        'offset': i * 1000
     })
     print(i, '- offset')
-    i += 1
 
 print('Adding to db')
 db.girls.insert_many(list(girls.values()))
