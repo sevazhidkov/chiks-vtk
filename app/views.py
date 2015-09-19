@@ -19,7 +19,7 @@ def index():
     })))
 
     # Генерируем рейтинг девушек
-    girls_rating = db.girls.find(limit=10).sort([
+    girls_rating = db.girls.find(limit=20).sort([
         ('rating', pymongo.DESCENDING),
     ])
     return render_template('index.html', girls=girls_rating, pair=[
@@ -38,13 +38,13 @@ def vote():
     # С помощью формулы рейтинга Эло, обновляем рейтинги девушек
     db.girls.update_one({'_id': winner_girl['_id']}, {
         '$set': {
-            'rating': rating(winner_girl['rating'], 1, loser_girl['rating']),
+            'rating': round(rating(winner_girl['rating'], 1, loser_girl['rating'])),
             'checks': winner_girl['checks'] + 1
         }
     })
     db.girls.update_one({'_id': loser_girl['_id']}, {
         '$set': {
-            'rating': rating(loser_girl['rating'], 0, winner_girl['rating']),
+            'rating': round(rating(loser_girl['rating'], 0, winner_girl['rating'])),
             'checks': loser_girl['checks'] + 1
         }
     })

@@ -4,4 +4,30 @@ body {
 
 .pair .girl {
   display: inline-block;
+  margin-right: 1%;
+  margin-top: 1%;
+}
+
+.rating {
+  margin-left: 25%;
+  margin-right: 25%;
+
+  margin-top: 2%;
+}
+.rating h2 {
+  margin-bottom: 2%;
+}
+
+.rating .girl {
+  margin-bottom: 5%;
+  display: inline-block;
+  margin-right: 1%;
+}
+
+.rating .girl h3 {
+  margin-bottom: -5%;
+}
+
+.rating .girl .number{
+  font-size: 150%;
 }

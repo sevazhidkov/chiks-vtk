@@ -26,14 +26,16 @@
     </div>
   </div>
 
-  <h2>Рейтинг</h2>
-  <ol class='rating'>
+  <div class='rating'>
+    <h2>Рейтинг</h2>
     {% for girl in girls %}
-      <li>
+      <div class='girl'>
         <img src='{{girl.photo}}'>
         <br>
-        <span class='name'><a href='{{girl.link}}'>{{girl.name}}</a></span> - <span class='number'>{{girl.rating}}</span>
-      </li>
+        <h3><a href='{{girl.link}}'>{{girl.name}}</a></h3>
+        <br>
+        <span class='number'>{{girl.rating}}</span>
+      </div>
     {% endfor %}
-  </ol>
+  </div>
 {% endblock %}
