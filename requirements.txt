@@ -1,1 +1,4 @@
 flask
+gunicorn
+pymongo
+flask_bootstrap

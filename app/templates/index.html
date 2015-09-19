@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Воткинские чики{% endblock %}
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block content %}
+  <h1>Выбирай чику, которая круче</h1>
+  <div class='pair'>
+    <div class='girl'>
+      <a href='vote?winner={{pair[0]._id}}&loser={{pair[1]._id}}'>
+        <img src='{{pair[0].photo}}'>
+        <br>
+        <span class='name'>{{pair[0].name}}</span>
+      </a>
+    </div>
+
+    <div class='girl'>
+      <a href='vote?winner={{pair[1]._id}}&loser={{pair[0]._id}}'>
+        <img src='{{pair[1].photo}}'>
+        <br>
+        <span class='name'>{{pair[1].name}}</span>
+      </a>
+    </div>
+  </div>
+
+  <h2>Рейтинг</h2>
+  <ol class='rating'>
+    {% for girl in girls %}
+      <li>
+        <img src='{{girl.photo}}'>
+        <br>
+        <span class='name'><a href='{{girl.link}}'>{{girl.name}}</a></span> - <span class='number'>{{girl.rating}}</span>
+      </li>
+    {% endfor %}
+  </ol>
+{% endblock %}
