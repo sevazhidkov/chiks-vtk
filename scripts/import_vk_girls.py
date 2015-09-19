@@ -59,6 +59,7 @@ while response['items']:
         'offset': i + 1000
     })
     print(i, '- offset')
+    i += 1
 
 print('Adding to db')
 db.girls.inset_many(list(girls.values()))
