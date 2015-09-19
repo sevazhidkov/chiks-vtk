@@ -62,4 +62,4 @@ while response['items']:
     i += 1
 
 print('Adding to db')
-db.girls.inset_many(list(girls.values()))
+db.girls.insert_many(list(girls.values()))
