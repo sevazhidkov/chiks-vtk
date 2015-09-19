@@ -21,7 +21,7 @@ for i in range(14, 21):
         if 'photo_200' not in girl:
             continue
         db.girls.insert_one({
-            'name': girl['first_name'] + girl['last_name'],
+            'name': girl['first_name'] + ' ' + girl['last_name'],
             'photo': girl['photo_200'],
             'link': 'https://vk.com/id' + str(girl['id']),
             'rating': 1000,
