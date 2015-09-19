@@ -2,3 +2,4 @@ flask
 gunicorn
 pymongo
 flask_bootstrap
+vk_api
