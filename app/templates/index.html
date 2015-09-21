@@ -36,7 +36,9 @@
       <div class='girl'>
         <img src='{{girl.photo}}'>
         <br>
-        <h3><a href='{{girl.link}}'>{{girl.name}}</a></h3>
+        <h3><a href='{{girl.link}}'>{{girl.name.split(' ')[0]}}</a></h3>
+        <br>
+        <h3><a href='{{girl.link}}'>{{girl.name.split(' ')[1]}}</a></h3>
         <br>
         <span class='number'>{{girl.rating}}</span>
       </div>
